@@ -119,4 +119,10 @@ func TestIntSample(t *testing.T) {
 	if len(sample) != 10 {
 		t.Errorf("expected 10, got %d", len(sample))
 	}
+
+	s1 := intSample(10)
+	s2 := intSample(10)
+	if reflect.DeepEqual(s1, s2) {
+		t.Error("samples should be different!")
+	}
 }
